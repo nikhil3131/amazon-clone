@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
@@ -9,6 +9,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 export default function Navbar() {
+    const { pathname } = useLocation();
     const [serachedProduct, setSearchedProduct] = useState("");
 
     async function handleSubmit(e){
@@ -18,58 +19,58 @@ export default function Navbar() {
 
     return (
         <nav>
-            {/*mobile navigation bar*/}
+            {/******************************************** mobile navigationbar *****************************************************/}
             <header className="flex sm:hidden justify-between px-3 pt-2 pb-1 bg-white fixed right-0 left-0 bottom-0 z-30">
                 {/*home*/}
-                <span className="flex flex-col items-center">
-                    <span className="w-7 h-1 bg-black absolute top-0 rounded-b"></span>
-                    <Link>
+                <span className={pathname === "/" ? "flex flex-col items-center text-[#419197]":"flex flex-col items-center"}>
+                    <span className={pathname === "/" ? "w-7 h-1 bg-[#419197]  absolute top-0 rounded-b":"hidden"}></span>
+                    <Link to="/">
                         <HomeOutlinedIcon />
                     </Link>
                     <span className="text-xs">Home</span>
                 </span>
 
                 {/*profile*/}
-                <span className="flex flex-col items-center">
-                    <span className="w-7 h-1 bg-black absolute top-0 rounded-b"></span>
-                    <Link>
+                <span className={pathname === "/profile" ? "flex flex-col items-center text-[#419197]":"flex flex-col items-center"}>
+                    <span className={pathname === "/profile" ? "w-7 h-1 bg-[#419197] absolute top-0 rounded-b":"hidden"}></span>
+                    <Link to="/profile">
                         <Person2OutlinedIcon />
                     </Link>
                     <span className="text-xs">You</span>
                 </span>
 
                 {/*more*/}
-                <span className="flex flex-col items-center">
-                    <span className="w-7 h-1 bg-black absolute top-0 rounded-b"></span>
-                    <Link>
+                <span className={pathname === "/more" ? "flex flex-col items-center text-[#419197]":"flex flex-col items-center"}>
+                    <span className={pathname === "/more" ? "w-7 h-1 bg-[#419197] absolute top-0 rounded-b":"hidden"}></span>
+                    <Link to="more">
                         <LayersOutlinedIcon />
                     </Link>
                     <span className="text-xs">More</span>
                 </span>
 
                 {/* cart */}
-                <span className="flex flex-col items-center">
-                    <span className="w-7 h-1 bg-black absolute top-0 rounded-b"></span>
-                    <Link>
+                <span className={pathname === "/cart" ? "flex flex-col items-center text-[#419197]":"flex flex-col items-center"}>
+                    <span className={pathname === "/cart" ? "w-7 h-1 bg-[#419197] absolute top-0 rounded-b":"hidden"}></span>
+                    <Link to="cart">
                         <ShoppingCartOutlinedIcon />
                     </Link>
                     <span className="text-xs">Cart</span>
                 </span>
 
                 {/* menu */}
-                <span className="flex flex-col items-center">
-                    <span className="w-7 h-1 bg-black absolute top-0 rounded-b"></span>
-                    <Link>
+                <span className={pathname === "/menu" ? "flex flex-col items-center text-[#419197]":"flex flex-col items-center"}>
+                    <span className={pathname === "/menu" ? "w-7 h-1 bg-[#419197] absolute top-0 rounded-b":"hidden"}></span>
+                    <Link to="menu">
                         <MenuOutlinedIcon />
                     </Link>
                     <span className="text-xs">Menu</span>
                 </span>
             </header>
 
-            {/* desktop navbar */}
-            <header className="hidden sm:flex bg-[#131921] justify-between px-4 py-2 items-center space-x-3">
+            {/***************************************** desktop navbar **************************************/}
+            <header className="hidden sm:flex bg-[#131921] justify-between px-4 py-2 items-center space-x-4">
                 {/* amazon logo */}
-                <span>
+                <span className="mt-2">
                     <Link to="/">
                         <img
                             src="../../src/assets/images/NicePng_amazon-logo-png_167642.png"

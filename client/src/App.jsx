@@ -11,6 +11,9 @@ import {
     Products,
     Signup,
     SingleProduct,
+    More,
+    Menu,
+    Profile,
 } from "./pages";
 
 //created different routes for multiple pages
@@ -43,6 +46,18 @@ const router = createBrowserRouter([
             {
                 path: "product/:id",
                 element: <SingleProduct />,
+            },
+            {
+                path: "/more",
+                element: <More />,
+            },
+            {
+                path: "/menu",
+                element: <Menu />,
+            },
+            {
+                path: "/profile",
+                element: <Profile />,
             },
         ],
     },
