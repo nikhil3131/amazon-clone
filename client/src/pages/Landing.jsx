@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-import { Banner } from "../components";
+import { Banner, MobileSecondaryNavbar } from "../components";
 import { fetchDataFromApi } from "../dataFetching/fakeApi.js";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+
 
 export default function Landing() {
+    const [serachedProduct, setSearchedProduct] = useState("");
     const [hasPrime] = useState(Math.random() < 0.5);
+
+    async function handleSubmit(e){
+      e.preventDefault()
+      console.log(serachedProduct)
+  }
 
     //fetching data from API
     const { data, error, isLoading, isError } = fetchDataFromApi(
@@ -24,6 +32,27 @@ export default function Landing() {
 
     return (
         <section className="bg-gray-100">
+          {/* mobile searchbar */}
+          <div className="p-2 bg-blue-300 sm:hidden">
+          <form onSubmit={handleSubmit} className="flex flex-grow">
+                    <input
+                        className="p-1 focus:outline-none px-2 rounded-l flex-grow"
+                        type="text"
+                        placeholder="Amazon Search"
+                        id="search"
+                        onChange={(e)=>{setSearchedProduct(e.target.value)}}
+                    />
+                    <button type="submit" className="p-1 px-2 hover:bg-orange-400 bg-orange-300 rounded-r">
+                        <SearchOutlinedIcon />
+                    </button>
+                </form>
+          </div>  
+
+          {/* mobile secondary navbar */}
+          <div className="flex sm:hidden">
+            <MobileSecondaryNavbar/>
+          </div>
+
             <section className="max-w-screen-2xl mx-auto">
                 {/* banners */}
                 <Banner />
