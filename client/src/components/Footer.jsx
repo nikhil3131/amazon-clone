@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function Footer() {
     const navigate = useNavigate();
     return (
-        <footer>
+        <footer className="hidden sm:block">
             {/* back to top */}
             <div className="text-center text-sm text-white bg-[#37475A] py-3 cursor-pointer" onClick={() => {navigate("/");}}>
                 Back to home
