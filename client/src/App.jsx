@@ -16,6 +16,7 @@ import {
     Profile,
 } from "./pages";
 
+
 //created different routes for multiple pages
 const router = createBrowserRouter([
     {
