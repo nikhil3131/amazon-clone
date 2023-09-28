@@ -22,12 +22,13 @@ export default function Banner() {
     const poster = banners[currentIndex];
 
     return (
-        <section>
+        <section className="relative">
             <div>
                 <Link to={poster.href}>
                     <img src={poster.image} alt={poster.title} />
                 </Link>
             </div>
+            <div className="h-28 w-full bg-gradient-to-t from-gray-100 to-transparent absolute bottom-0" />
         </section>
     );
 }
