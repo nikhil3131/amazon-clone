@@ -1,4 +1,7 @@
+//react router dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+//all the webpages pages
 import {
     Cart,
     Error,
@@ -10,6 +13,7 @@ import {
     SingleProduct,
 } from "./pages";
 
+//created different routes for multiple pages
 const router = createBrowserRouter([
     {
         path: "/",

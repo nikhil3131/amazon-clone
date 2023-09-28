@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
+
+import { Navbar, Footer } from "../components";
 
 export default function HomepageLayout() {
-  return (
-    <div>HomepageLayout</div>
-  )
+    return (
+        <div>
+            <Navbar />
+            <Outlet />
+            <Footer />
+        </div>
+    );
 }
