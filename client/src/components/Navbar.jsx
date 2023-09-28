@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link,useLocation } from "react-router-dom";
 import SecondaryNavbar from "./SecondaryNavbar";
+import logo from "../../src/assets/images/logo.png"
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
@@ -74,7 +75,7 @@ export default function Navbar() {
                 <span className="mt-2">
                     <Link to="/">
                         <img
-                            src="../../src/assets/images/NicePng_amazon-logo-png_167642.png"
+                            src={logo}
                             width={100}
                             height={40}
                             className="object-contain"
