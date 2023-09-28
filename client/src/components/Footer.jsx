@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../../src/assets/images/logo.png"
 
 export default function Footer() {
     const navigate = useNavigate();
@@ -52,7 +53,7 @@ export default function Footer() {
             </div>
 
             <div className="bg-[#37475A] flex items-center justify-center py-3">
-              <img src="../../src/assets/images/NicePng_amazon-logo-png_167642.png" width={100} height={40}/>
+              <img src={logo} width={100} height={40}/>
             </div>
         </footer>
     );
