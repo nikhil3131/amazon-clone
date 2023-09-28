@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link,useLocation } from "react-router-dom";
+import SecondaryNavbar from "./SecondaryNavbar";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
@@ -120,6 +121,9 @@ export default function Navbar() {
                     <span className="absolute rounded-full -top-1 right-11 text-yellow-300">0</span>
                 </div>
             </header>
+            
+            {/* desktop secondary navbar */}
+            <SecondaryNavbar/>
         </nav>
     );
 }
