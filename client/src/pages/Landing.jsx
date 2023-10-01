@@ -3,6 +3,7 @@ import { Banner, MobileSecondaryNavbar } from "../components";
 import { fetchDataFromApi } from "../dataFetching/fakeApi.js";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import primeLogo from "../assets/images/prime.png"
 
 
 export default function Landing() {
@@ -100,7 +101,7 @@ export default function Landing() {
                                 {hasPrime && (
                                     <div className="flex items-center space-x-2 -mt-5">
                                         <img
-                                            src="../../src/assets/images/icons8-amazon-prime-48.png"
+                                            src={primeLogo}
                                             alt="prime"
                                         />
                                         <p className="text-xs text-gray-500">
