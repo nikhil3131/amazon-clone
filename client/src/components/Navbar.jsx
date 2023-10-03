@@ -115,7 +115,7 @@ export default function Navbar() {
 
                 {/* cart */}
                 <div>
-                    <Link className="text-white text-xs font-black">
+                    <Link to="/cart" className="text-white text-xs font-black">
                         <ShoppingCartOutlinedIcon/>
                         Cart
                     </Link>

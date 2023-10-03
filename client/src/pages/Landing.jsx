@@ -4,6 +4,7 @@ import { fetchDataFromApi } from "../dataFetching/fakeApi.js";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import primeLogo from "../assets/images/prime.png"
+import Loading from "../components/loading-animation/Loading";
 
 
 export default function Landing() {
@@ -23,7 +24,7 @@ export default function Landing() {
 
     //loading state
     if (isLoading) {
-        return <div className="text-lg font-black">Loading.....</div>;
+        return <Loading/>;
     }
 
     //error during data fetching
